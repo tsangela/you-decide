@@ -1,0 +1,36 @@
+{
+  "restaurants": [
+    {
+      "name": "McDonald's",
+      "price": "$"
+    },
+    {
+      "name": "A&W",
+      "price": "$"
+    },
+    {
+      "name": "Wendy's",
+      "price": "$"
+    },
+    {
+      "name": "Miku",
+      "price": "$$$$"
+    },
+    {
+      "name": "Sushi California",
+      "price": "$$"
+    },
+    {
+      "name": "HaiDiLao",
+      "price": "$$$"
+    },
+    {
+      "name": "Hot Star",
+      "price": "$"
+    },
+    {
+      "name": "Sushi Garden",
+      "price": "$$"
+    }
+  ]
+}
