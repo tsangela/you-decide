@@ -22,5 +22,7 @@ export const theme3 = {
   regalia: "#542E71",
 
   saffron: "#F6AE2D",
-  melon: "#F7BFB4"
+  melon: "#F7BFB4",
+  lavenderGray: "#D3C2CE",
+  darkSlateGray: "#2F4858"
 };

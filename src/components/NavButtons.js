@@ -1,7 +1,8 @@
 import React from "react";
 import styled from "styled-components";
-import { CenterWrapper } from "./CenterWrapper";
+// import { CenterWrapper } from "./CenterWrapper";
 import { theme1, theme2, theme3 } from "./theme";
+import {CenterWrapper} from "./Utils";
 
 export default class NavButtons extends React.Component {
   render() {
@@ -47,6 +48,7 @@ const NavLink = styled.a`
 
   &:hover {
     // color: ${theme3.saffron};
-    color: ${theme3.melon};
+    // color: ${theme3.melon};
+    color: ${theme3.lavenderGray};
   }
 `;

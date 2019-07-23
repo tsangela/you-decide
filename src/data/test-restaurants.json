@@ -2,35 +2,83 @@
   "restaurants": [
     {
       "name": "McDonald's",
-      "price": "$"
+      "price": "$",
+      "description": "Full of clowns"
     },
     {
       "name": "A&W",
-      "price": "$"
+      "price": "$",
+      "description": "Family food"
     },
     {
       "name": "Wendy's",
-      "price": "$"
+      "price": "$",
+      "description": "Single Dave's burger"
     },
     {
       "name": "Miku",
-      "price": "$$$$"
+      "price": "$$$$",
+      "description": "BOUGEE SUSHI"
     },
     {
       "name": "Sushi California",
-      "price": "$$"
+      "price": "$$",
+      "description": "Not wallet-breaking prices, but still good sushi"
     },
     {
       "name": "HaiDiLao",
-      "price": "$$$"
+      "price": "$$$",
+      "description": "Chinese hot pot yeet"
     },
     {
       "name": "Hot Star",
-      "price": "$"
+      "price": "$",
+      "description": "Big ass nugget"
     },
     {
       "name": "Sushi Garden",
-      "price": "$$"
+      "price": "$$",
+      "description": "Another sushi option"
+    },
+    {
+      "name": "Boiling Point",
+      "price": "$$",
+      "description": "Mini hot pots"
+    },
+    {
+      "name": "Pearl Castle",
+      "price": "$",
+      "description": "Taiwanese chicken nuggs"
+    },
+    {
+      "name": "Samsoonie",
+      "price": "$$",
+      "description": "Korean food yum yum"
+    },
+    {
+      "name": "Andamiro",
+      "price": "$$",
+      "description": "Korean food yum yum pt 2"
+    },
+    {
+      "name": "Saku",
+      "price": "$$",
+      "description": "Japanese cutlet paradise"
+    },
+    {
+      "name": "MDG",
+      "price": "$$",
+      "description": "Pork belly"
+    },
+    {
+      "name": "Five Guys",
+      "price": "$",
+      "description": "Burgers, burgers, burgers"
+    },
+    {
+      "name": "Burger King",
+      "price": "$",
+      "description": "Mediocre but cheap chimken nuggs"
     }
   ]
 }

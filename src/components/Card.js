@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import styled from "styled-components";
-import { CenterWrapper } from "./CenterWrapper";
+// import { CenterWrapper } from "./CenterWrapper";
 import { Modal } from "./Modal";
+import {CenterWrapper} from "./Utils";
 
 const data = require("../data/test-restaurants.json");
 
@@ -18,36 +19,47 @@ class Cards extends Component {
 
   showModal(id) {
     this.setState({ show: id });
-  };
+  }
 
   hideModal() {
     this.setState({ show: null });
-  };
+  }
 
   render() {
-    // console.log('state -> ' + this.state.show);
-    const list =
+    const cards =
       data &&
       data.restaurants.map(restaurant => {
-        // console.log(JSON.stringify(restaurant));
         return (
-          <Card key={restaurant.name}>
+          <Card
+            key={restaurant.name}
+            onClick={() => this.showModal(restaurant.name)}
+          >
             <p>{restaurant.name}</p>
             <p>{restaurant.price}</p>
-            <button onClick={() => this.showModal(restaurant.name)}>
-              open
-            </button>
-            <Modal
-              key={`modal.${restaurant.name}`}
-              show={this.state.show === restaurant.name}
-              handleClose={() => this.hideModal()}
-            >
-              <p>Some sort of description</p>
-            </Modal>
           </Card>
         );
       });
-    return <CenterWrapper>{list}</CenterWrapper>;
+
+    const modals =
+      data &&
+      data.restaurants.map(restaurant => {
+        return (
+          <Modal
+            key={`modal.${restaurant.name}`}
+            show={this.state.show === restaurant.name}
+            handleClose={() => this.hideModal()}
+            description={restaurant.description}
+          >
+          </Modal>
+        );
+      });
+
+    return (
+      <CenterWrapper padding>
+        {cards}
+        {modals}
+      </CenterWrapper>
+    );
   }
 }
 
@@ -67,6 +79,7 @@ const Card = styled.div`
 
   &:hover {
     transform: scale(1.1);
+    cursor: pointer;
   }
 `;
 
