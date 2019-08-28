@@ -1,6 +1,6 @@
 import styled from "styled-components";
-import { NavLink } from "react-router-dom";
 import {theme} from "./theme";
+import {Link} from "react-router-dom";
 
 export const CenterWrapper = styled.div`
   display: flex;
@@ -13,13 +13,13 @@ export const CenterWrapper = styled.div`
   }
 `;
 
-export const StyledLink = styled(NavLink)`
+export const StyledLink = styled(Link)`
   text-decoration: none;
   margin: 0 0.5rem;
 `;
 
 export const Button = styled.div`
-  font-size: 18px;
+  font-size: 24px;
   padding: 5px 15px;
   margin-top: 15px;
   

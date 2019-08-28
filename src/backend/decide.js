@@ -3,9 +3,9 @@ import {Modal} from "../components/Modal";
 
 const data = require("../data/phrases.json");
 
-export function choose(locations) {
+export function decide(locations) {
   if (!locations || locations.length === 0) {
-    alert("🚨 No locations to choose from!");
+    alert("🚨 No locations to decide from!");
     return;
   }
 
