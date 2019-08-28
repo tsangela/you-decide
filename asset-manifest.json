@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/you-decide/static/css/main.40037d52.chunk.css",
+    "main.js": "/you-decide/static/js/main.574f53b6.chunk.js",
+    "main.js.map": "/you-decide/static/js/main.574f53b6.chunk.js.map",
+    "runtime~main.js": "/you-decide/static/js/runtime~main.947e831f.js",
+    "runtime~main.js.map": "/you-decide/static/js/runtime~main.947e831f.js.map",
+    "static/js/2.52d29b59.chunk.js": "/you-decide/static/js/2.52d29b59.chunk.js",
+    "static/js/2.52d29b59.chunk.js.map": "/you-decide/static/js/2.52d29b59.chunk.js.map",
+    "index.html": "/you-decide/index.html",
+    "precache-manifest.ea19a665ca079d09c4ec94ee001e8930.js": "/you-decide/precache-manifest.ea19a665ca079d09c4ec94ee001e8930.js",
+    "service-worker.js": "/you-decide/service-worker.js",
+    "static/css/main.40037d52.chunk.css.map": "/you-decide/static/css/main.40037d52.chunk.css.map"
+  }
+}
