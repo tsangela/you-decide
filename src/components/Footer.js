@@ -28,7 +28,7 @@ export default class Footer extends React.Component {
         >
           <i className="fas fa-code-branch fa-3x nav-btn" />
         </NavLink>
-        <NavLink href="mailto:?subject=Play%20Connect%20Four%21&body=Check%20out%20this%20cool%20way%20to%20decide%20where%20to%20eat%3A%20https%3A//tsangela.github.io/you-decide/">
+        <NavLink href="mailto:?subject=Decide%20where%20to%20eat%20now%21&body=Check%20out%20this%20cool%20way%20to%20decide%20where%20to%20eat%3A%20https%3A//tsangela.github.io/you-decide/">
           <i className="fas fa-share-alt fa-3x nav-btn" />
         </NavLink>
       </NavWrapper>

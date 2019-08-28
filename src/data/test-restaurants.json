@@ -3,37 +3,37 @@
     {
       "name": "McDonald's",
       "price": "$",
-      "description": "Full of clowns"
+      "description": "A classic"
     },
     {
       "name": "A&W",
       "price": "$",
-      "description": "Family food"
+      "description": "Draft root beer, thick-cut fries, juicy beef burgers... 🤤"
     },
     {
       "name": "Wendy's",
       "price": "$",
-      "description": "Single Dave's burger"
+      "description": "Has a burger called the \"Single Dave's burger\""
     },
     {
       "name": "Miku",
       "price": "$$$$",
-      "description": "BOUGEE SUSHI"
+      "description": "BOUGEE $U$HI"
     },
     {
       "name": "Sushi California",
       "price": "$$",
-      "description": "Not wallet-breaking prices, but still good sushi"
+      "description": "Solid quality sushi for non-wallet-breaking prices"
     },
     {
       "name": "HaiDiLao",
       "price": "$$$",
-      "description": "Chinese hot pot yeet"
+      "description": "Fancy chinese hot pot with noodle boys"
     },
     {
       "name": "Hot Star",
       "price": "$",
-      "description": "Big ass nugget"
+      "description": "Big chicken nugget"
     },
     {
       "name": "Sushi Garden",
@@ -53,12 +53,12 @@
     {
       "name": "Samsoonie",
       "price": "$$",
-      "description": "Korean food yum yum"
+      "description": "Korean food, large portions, affordable, yum"
     },
     {
-      "name": "Andamiro",
+      "name": "Andamiro Korean Bistro",
       "price": "$$",
-      "description": "Korean food yum yum pt 2"
+      "description": "WARNING: CLOSED ON TUESDAYS!"
     },
     {
       "name": "Saku",
@@ -66,19 +66,14 @@
       "description": "Japanese cutlet paradise"
     },
     {
-      "name": "MDG",
+      "name": "Ma Dang Goul (MDG)",
       "price": "$$",
-      "description": "Pork belly"
+      "description": "Casual Korean eatery with a large menu of popular Korean dishes"
     },
     {
       "name": "Five Guys",
       "price": "$",
       "description": "Burgers, burgers, burgers"
-    },
-    {
-      "name": "Burger King",
-      "price": "$",
-      "description": "Mediocre but cheap chimken nuggs"
     }
   ]
 }

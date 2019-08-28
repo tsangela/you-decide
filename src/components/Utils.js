@@ -25,7 +25,7 @@ export const Button = styled.div`
   
   width: fit-content;
   
-  background: ${props => props.backgroundColor || theme.saffron};
+  background: ${props => props.backgroundColor || theme.lavenderGray};
   color: whitesmoke;
   
   border-radius: 50px;

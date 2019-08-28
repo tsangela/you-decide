@@ -3,7 +3,7 @@
     {
       "name": "Exposure",
       "price": "$$",
-      "description": "Fuck rain"
+      "description": "Gives you a discount when it's rainy out"
     },
     {
       "name": "Onezo",
@@ -13,22 +13,22 @@
     {
       "name": "Yi Fang",
       "price": "$$",
-      "description": "Scam fruit syrup"
+      "description": "Fresh tasting fruit tea in an aesthetic cup"
     },
     {
-      "name": "Sharetea",
+      "name": "Sharetea Bubblicious",
       "price": "$",
       "description": "Sharing is caring!"
     },
     {
-      "name": "Coco",
+      "name": "CoCo Fresh Tea & Juice",
       "price": "$",
       "description": "Same name as my cute chihuahua"
     },
     {
       "name": "Chatime",
       "price": "$",
-      "description": "Everything other than the milk tea kinda mediocre doe"
+      "description": "What time is it? Chatime!"
     },
     {
       "name": "Xing Fu Tang",
@@ -38,12 +38,27 @@
     {
       "name": "Chase Tea",
       "price": "$",
-      "description": "Tea that runs away"
+      "description": "Tea that runs away (?)"
     },
     {
       "name": "The Alley",
       "price": "$",
       "description": "The one with the deer on the cup"
+    },
+    {
+      "name": "Milk & Sugar Café",
+      "price": "$",
+      "description": "Enticing weekly specials"
+    },
+    {
+      "name": "Boba Boy",
+      "price": "$",
+      "description": "Boba boy, boba, boba, boba boy\nBoba boy, boba, boba, boba boy\nBoba boy, boba, boba, boba boy"
+    },
+    {
+      "name": "Boiling Point",
+      "price": "$",
+      "description": "Usually people go for the Taiwanese hot pot, but bubble tea exists here too"
     }
   ]
 }
