@@ -1,6 +1,6 @@
 import React from "react";
 import styled, { keyframes } from "styled-components";
-import { theme1, theme2, theme3 } from "./theme";
+import { theme } from "./theme";
 
 export const Modal = ({ handleClose, show, description }) => {
   return (
@@ -31,7 +31,7 @@ const Container = styled.div`
   height: 10rem;
   padding: 1.5rem;
   box-shadow: 2px 2px 22px rgba(0, 0, 0, 0.15);
-  border-top: 1.2rem solid ${theme3.lavenderGray}
+  border-top: 1.2rem solid ${props => props.borderColor || theme.lavenderGray};
   
   animation: 0.25s ${zoomFadeIn};
 `;

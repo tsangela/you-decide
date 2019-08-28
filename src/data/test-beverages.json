@@ -1,0 +1,49 @@
+{
+  "locations": [
+    {
+      "name": "Exposure",
+      "price": "$$",
+      "description": "Fuck rain"
+    },
+    {
+      "name": "Onezo",
+      "price": "$",
+      "description": "All sorts of cool pearls"
+    },
+    {
+      "name": "Yi Fang",
+      "price": "$$",
+      "description": "Scam fruit syrup"
+    },
+    {
+      "name": "Sharetea",
+      "price": "$",
+      "description": "Sharing is caring!"
+    },
+    {
+      "name": "Coco",
+      "price": "$",
+      "description": "Same name as my cute chihuahua"
+    },
+    {
+      "name": "Chatime",
+      "price": "$",
+      "description": "Everything other than the milk tea kinda mediocre doe"
+    },
+    {
+      "name": "Xing Fu Tang",
+      "price": "$$",
+      "description": "Famous for their brown sugar balls"
+    },
+    {
+      "name": "Chase Tea",
+      "price": "$",
+      "description": "Tea that runs away"
+    },
+    {
+      "name": "The Alley",
+      "price": "$",
+      "description": "The one with the deer on the cup"
+    }
+  ]
+}

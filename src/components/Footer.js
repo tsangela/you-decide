@@ -1,10 +1,9 @@
 import React from "react";
 import styled from "styled-components";
-// import { CenterWrapper } from "./CenterWrapper";
-import { theme1, theme2, theme3 } from "./theme";
+import { theme } from "./theme";
 import {CenterWrapper} from "./Utils";
 
-export default class NavButtons extends React.Component {
+export default class Footer extends React.Component {
   render() {
     return (
       <NavWrapper>
@@ -43,12 +42,10 @@ const NavWrapper = styled(CenterWrapper)`
 
 const NavLink = styled.a`
   margin: 0.5rem;
-  color: ${theme3.ashGrey};
+  color: ${theme.ashGrey};
   transition: 0.3s ease;
 
   &:hover {
-    // color: ${theme3.saffron};
-    // color: ${theme3.melon};
-    color: ${theme3.lavenderGray};
+    color: ${theme.lavenderGray};
   }
 `;

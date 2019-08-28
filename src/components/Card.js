@@ -1,10 +1,7 @@
 import React, { Component } from "react";
 import styled from "styled-components";
-// import { CenterWrapper } from "./CenterWrapper";
 import { Modal } from "./Modal";
-import {CenterWrapper} from "./Utils";
-
-const data = require("../data/test-restaurants.json");
+import { CenterWrapper } from "./Utils";
 
 class Cards extends Component {
   constructor(props, context) {
@@ -26,36 +23,38 @@ class Cards extends Component {
   }
 
   render() {
+    const data = this.props.data;
     const cards =
       data &&
-      data.restaurants.map(restaurant => {
+      data.locations &&
+      data.locations.map(location => {
         return (
           <Card
-            key={restaurant.name}
-            onClick={() => this.showModal(restaurant.name)}
+            key={location.name}
+            onClick={() => this.showModal(location.name)}
           >
-            <p>{restaurant.name}</p>
-            <p>{restaurant.price}</p>
+            <p>{location.name}</p>
+            <p>{location.price}</p>
           </Card>
         );
       });
 
     const modals =
       data &&
-      data.restaurants.map(restaurant => {
+      data.locations &&
+      data.locations.map(location => {
         return (
           <Modal
-            key={`modal.${restaurant.name}`}
-            show={this.state.show === restaurant.name}
+            key={`modal.${location.name}`}
+            show={this.state.show === location.name}
             handleClose={() => this.hideModal()}
-            description={restaurant.description}
-          >
-          </Modal>
+            description={location.description}
+          />
         );
       });
 
     return (
-      <CenterWrapper padding>
+      <CenterWrapper margin>
         {cards}
         {modals}
       </CenterWrapper>
@@ -63,7 +62,7 @@ class Cards extends Component {
   }
 }
 
-const Card = styled.div`
+export const Card = styled.div`
   text-align: center;
   background: ghostwhite;
   width: 10rem;
