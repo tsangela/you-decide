@@ -6,7 +6,7 @@ export const NavBar = () => {
   return (
     <CenterWrapper>
       <ButtonWrapper>
-        <StyledLink exact to="/">
+        <StyledLink to="/">
           <NavButton key="/" title="home">🏠</NavButton>
         </StyledLink>
 
