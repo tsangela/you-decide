@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/you-decide/static/css/main.40037d52.chunk.css",
-    "main.js": "/you-decide/static/js/main.089bdd12.chunk.js",
-    "main.js.map": "/you-decide/static/js/main.089bdd12.chunk.js.map",
+    "main.js": "/you-decide/static/js/main.6cea62a1.chunk.js",
+    "main.js.map": "/you-decide/static/js/main.6cea62a1.chunk.js.map",
     "runtime~main.js": "/you-decide/static/js/runtime~main.947e831f.js",
     "runtime~main.js.map": "/you-decide/static/js/runtime~main.947e831f.js.map",
     "static/js/2.b6cdac0a.chunk.js": "/you-decide/static/js/2.b6cdac0a.chunk.js",
     "static/js/2.b6cdac0a.chunk.js.map": "/you-decide/static/js/2.b6cdac0a.chunk.js.map",
     "index.html": "/you-decide/index.html",
-    "precache-manifest.ef41fdf72e02326bd797e3f740c9b396.js": "/you-decide/precache-manifest.ef41fdf72e02326bd797e3f740c9b396.js",
+    "precache-manifest.f2588cf8933446af4dd780465144f523.js": "/you-decide/precache-manifest.f2588cf8933446af4dd780465144f523.js",
     "service-worker.js": "/you-decide/service-worker.js",
     "static/css/main.40037d52.chunk.css.map": "/you-decide/static/css/main.40037d52.chunk.css.map"
   }
