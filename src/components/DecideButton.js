@@ -7,6 +7,6 @@ export const DecideButton = ({ locations }) => {
     key="decide"
     onClick={() => decide(locations)}
   >
-    decide
+    hit me up
   </Button>
 };
