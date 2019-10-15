@@ -1,19 +1,14 @@
 import Cards from "../Card";
 import React from "react";
-import {Button, CenterWrapper} from "../Utils";
-import {decide} from "../../backend/decide";
+import {CenterWrapper} from "../Utils";
+import {DecideButton} from "../DecideButton";
 
 export function Restaurants() {
   const data = require("../../data/test-restaurants.json");
 
   return (
     <CenterWrapper>
-      <Button
-        key="decide"
-        onClick={() => decide(data.locations)}
-      >
-        decide
-      </Button>
+      <DecideButton locations={data.locations}/>
       <Cards data={data}/>
     </CenterWrapper>
   );
