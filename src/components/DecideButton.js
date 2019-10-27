@@ -1,12 +1,12 @@
-import {Button} from "./Utils";
+import {Button, Emoji} from "./StyledComponents";
 import React from "react";
 import {decide} from "../backend/decide";
 
-export const DecideButton = ({ locations }) => {
-  return <Button
+export const DecideButton = ({ results }) =>
+  <Button
     key="decide"
-    onClick={() => decide(locations)}
+    onClick={() => decide(results)}
   >
     hit me up
-  </Button>
-};
+    <Emoji input={'✨'}/>
+  </Button>;

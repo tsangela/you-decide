@@ -1,15 +1,67 @@
 import React from "react";
-import styled, { keyframes } from "styled-components";
-import { theme } from "./theme";
+import styled, {keyframes} from "styled-components";
+import {theme} from "./theme";
+import {Emoji} from "./StyledComponents";
+import {calculateDistance, getMapUrl, isNonEmptyObject, roundToOneDecimal} from "../backend/utils";
 
-export const Modal = ({ handleClose, show, description }) => {
-  return (
-    <Container show={show}>
-      <p>{description}</p>
-      <CloseButton onClick={handleClose}>👌</CloseButton>
-    </Container>
-  );
-};
+export class Modal extends React.Component {
+
+  constructor(props, context) {
+    super(props, context);
+
+    this.state = {
+      distance: null
+    };
+  }
+
+  componentDidUpdate() {
+    const { place } = this.props;
+    const { distance } = this.state;
+    if (!distance) {
+      calculateDistance(place.geometry.location)
+        .then(res => {
+          // todo - Warning: Can't perform a React state update on an unmounted component.
+          this.setState({distance: res});
+        })
+        .catch(err => {
+          console.error(err);
+        });
+    }
+  }
+
+  render() {
+    const { place, handleClose, show } = this.props;
+    const { distance } = this.state;
+
+    return isNonEmptyObject(place)
+      ? <Container show={show}>
+        <h3>{place.name}</h3>
+        <p>{place.vicinity}</p>
+        <p>{distance ?
+          <span>
+            <Emoji input={'📍'}/>
+            <a href={getMapUrl(place.vicinity)} target='_blank'
+               rel="noopener noreferrer">{distance} m</a>
+          </span> :
+          <i className="fa fa-spinner fa-spin"/>}
+        </p>
+        <div><span><b>Rating:</b> {getSymbols(place.rating, '⭐')} {roundToOneDecimal(place.rating)}</span></div>
+        <div><span><b>Price:</b> {getSymbols(place.price_level, '💰')}</span></div>
+        <CloseButton onClick={handleClose}><Emoji input={'👌'}/></CloseButton>
+      </Container> : <></>;
+  }
+}
+
+function getSymbols(rating, symbol) {
+  if (!rating) {
+    return 'N/A';
+  }
+  let symbols = '';
+  for (let i = 1; i <= rating; i++) {
+    symbols += symbol;
+  }
+  return symbols;
+}
 
 const zoomFadeIn = keyframes`
   0% {
@@ -28,10 +80,11 @@ const Container = styled.div`
   text-align: center;
   background: white;
   width: 18rem;
-  height: 10rem;
+  height: 12rem;
   padding: 1.5rem;
   box-shadow: 2px 2px 22px rgba(0, 0, 0, 0.15);
   border-top: 1.2rem solid ${props => props.borderColor || theme.lavenderGray};
+  overflow-y: scroll;
   
   animation: 0.25s ${zoomFadeIn};
 `;
@@ -49,3 +102,4 @@ const CloseButton = styled.div`
     cursor: pointer;
   }
 `;
+

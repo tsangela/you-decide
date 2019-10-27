@@ -1,19 +1,19 @@
 import "./index.css";
 
-import React, {Component} from "react";
+import React from "react";
 import ReactDOM from "react-dom";
 import {BrowserRouter as Router} from "react-router-dom";
 import {Route} from "react-router";
 import styled from "styled-components";
 import Footer from "./components/Footer";
 import {theme} from "./components/theme";
-import {CenterWrapper} from "./components/Utils";
+import {CenterWrapper} from "./components/StyledComponents";
 import {NavBar} from "./components/NavBar";
-import {Home} from "./components/pages/Home";
-import {Restaurants} from "./components/pages/Restaurants";
-import {Beverages} from "./components/pages/Beverages";
+import Home from "./components/pages/Home";
+import Restaurants from "./components/pages/Restaurants";
+import Cafes from "./components/pages/Cafes";
 
-class App extends Component {
+class App extends React.Component {
   render() {
     return (
       <Router>
@@ -21,11 +21,9 @@ class App extends Component {
           <Title>you decide</Title>
         </CenterWrapper>
         <NavBar/>
-        <>
-          <Route exact path="/" component={Home}/>
-          <Route path="/restaurants" component={Restaurants}/>
-          <Route path="/beverages" component={Beverages}/>
-        </>
+        <Route exact path="/" component={Home}/>
+        <Route path="/restaurants" component={Restaurants}/>
+        <Route path="/cafes" component={Cafes}/>
         <Footer/>
       </Router>
     );
@@ -38,7 +36,7 @@ const Title = styled.h1`
   border: 1px solid ${theme.ashGrey};
   color: ${theme.ashGrey};
   transition: ease 0.3s;
-  font-size: 2rem;
+  font-size: 2.5rem;
 
   &:hover {
     padding-left: 10px;

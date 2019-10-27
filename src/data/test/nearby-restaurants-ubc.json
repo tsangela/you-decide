@@ -1,0 +1,237 @@
+[
+  {
+    "geometry": {
+      "location": {
+        "lat": 49.2611012,
+        "lng": -123.24830529999997
+      },
+      "viewport": {
+        "south": 49.2597725197085,
+        "west": -123.2495993802915,
+        "north": 49.2624704802915,
+        "east": -123.24690141970848
+      }
+    },
+    "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/restaurant-71.png",
+    "id": "ba3673659c6d6c10dc76ff308eca5e243da06c03",
+    "name": "Pacific Poke",
+    "opening_hours": {
+      "open_now": true
+    },
+    "photos": [
+      {
+        "height": 4032,
+        "html_attributions": [
+          "<a href=\"https://maps.google.com/maps/contrib/102938364955123208380/photos\">Corbet Rutzer</a>"
+        ],
+        "width": 3024
+      }
+    ],
+    "place_id": "ChIJoeaVxctyhlQRxLhQQPtU-tY",
+    "plus_code": {
+      "compound_code": "7Q62+CM University Endowment Lands, Greater Vancouver A, BC, Canada",
+      "global_code": "84XR7Q62+CM"
+    },
+    "price_level": 2,
+    "rating": 3.8,
+    "reference": "ChIJoeaVxctyhlQRxLhQQPtU-tY",
+    "scope": "GOOGLE",
+    "types": [
+      "restaurant",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "user_ratings_total": 109,
+    "vicinity": "2366 Main Mall, Vancouver",
+    "html_attributions": []
+  },
+  {
+    "geometry": {
+      "location": {
+        "lat": 49.2621911,
+        "lng": -123.24496320000003
+      },
+      "viewport": {
+        "south": 49.26068246970851,
+        "west": -123.24675713029148,
+        "north": 49.2633804302915,
+        "east": -123.24405916970852
+      }
+    },
+    "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/restaurant-71.png",
+    "id": "198a59229fa0910e20140e27ed68e7b1bf20f38a",
+    "name": "Perugia Italian Caffè",
+    "opening_hours": {
+      "open_now": true
+    },
+    "photos": [
+      {
+        "height": 2988,
+        "html_attributions": [
+          "<a href=\"https://maps.google.com/maps/contrib/117336166350415582196/photos\">Nasa Rouf</a>"
+        ],
+        "width": 5312
+      }
+    ],
+    "place_id": "ChIJ12vSC8lyhlQRKc0MuP873R4",
+    "plus_code": {
+      "compound_code": "7Q64+V2 Vancouver, British Columbia, Canada",
+      "global_code": "84XR7Q64+V2"
+    },
+    "rating": 3.4,
+    "reference": "ChIJ12vSC8lyhlQRKc0MuP873R4",
+    "scope": "GOOGLE",
+    "types": [
+      "cafe",
+      "restaurant",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "user_ratings_total": 89,
+    "vicinity": "Life Sciences Centre, 2350 Health Sciences Mall, Vancouver",
+    "html_attributions": []
+  },
+  {
+    "geometry": {
+      "location": {
+        "lat": 49.26135739999999,
+        "lng": -123.24649520000003
+      },
+      "viewport": {
+        "south": 49.2600737197085,
+        "west": -123.24790003029148,
+        "north": 49.2627716802915,
+        "east": -123.24520206970851
+      }
+    },
+    "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/restaurant-71.png",
+    "id": "9b18e74ffd1790339d2dc5d04beac5a95bcc8df9",
+    "name": "Fit For Life",
+    "opening_hours": {
+      "open_now": true
+    },
+    "photos": [
+      {
+        "height": 1722,
+        "html_attributions": [
+          "<a href=\"https://maps.google.com/maps/contrib/104129857531193165565/photos\">Devraj Singh</a>"
+        ],
+        "width": 3102
+      }
+    ],
+    "place_id": "ChIJ-fQdaclyhlQRgiHgtErJM_Q",
+    "plus_code": {
+      "compound_code": "7Q63+GC University Endowment Lands, Greater Vancouver A, BC, Canada",
+      "global_code": "84XR7Q63+GC"
+    },
+    "rating": 3.4,
+    "reference": "ChIJ-fQdaclyhlQRgiHgtErJM_Q",
+    "scope": "GOOGLE",
+    "types": [
+      "restaurant",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "user_ratings_total": 24,
+    "vicinity": "105-6190 Agronomy Road, Vancouver",
+    "html_attributions": []
+  },
+  {
+    "geometry": {
+      "location": {
+        "lat": 49.2620489,
+        "lng": -123.2530999
+      },
+      "viewport": {
+        "south": 49.26067811970849,
+        "west": -123.25463763029148,
+        "north": 49.26337608029149,
+        "east": -123.25193966970852
+      }
+    },
+    "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/cafe-71.png",
+    "id": "ff5aa0494d4f56c6ecce0e8e352546eebcd632ae",
+    "name": "The Loop Cafe",
+    "opening_hours": {
+      "open_now": true
+    },
+    "photos": [
+      {
+        "height": 3036,
+        "html_attributions": [
+          "<a href=\"https://maps.google.com/maps/contrib/112855282270910202392/photos\">Matt Hangad</a>"
+        ],
+        "width": 4048
+      }
+    ],
+    "place_id": "ChIJEVZqecpyhlQRJEIxAkCbrQA",
+    "plus_code": {
+      "compound_code": "7P6W+RQ Vancouver, British Columbia, Canada",
+      "global_code": "84XR7P6W+RQ"
+    },
+    "price_level": 2,
+    "rating": 3.8,
+    "reference": "ChIJEVZqecpyhlQRJEIxAkCbrQA",
+    "scope": "GOOGLE",
+    "types": [
+      "cafe",
+      "restaurant",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "user_ratings_total": 14,
+    "vicinity": "2260 West Mall, Vancouver",
+    "html_attributions": []
+  },
+  {
+    "geometry": {
+      "location": {
+        "lat": 49.2646721,
+        "lng": -123.24593649999997
+      },
+      "viewport": {
+        "south": 49.26339996970849,
+        "west": -123.24701278029147,
+        "north": 49.26609793029149,
+        "east": -123.2443148197085
+      }
+    },
+    "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/cafe-71.png",
+    "id": "49ce58db852faa58806c8b52eec2d0dca3befac4",
+    "name": "Sodexo UBC Corner Cafe",
+    "opening_hours": {
+      "open_now": true
+    },
+    "photos": [
+      {
+        "height": 4032,
+        "html_attributions": [
+          "<a href=\"https://maps.google.com/maps/contrib/102837053549641110364/photos\">Ria Stone</a>"
+        ],
+        "width": 3024
+      }
+    ],
+    "place_id": "ChIJvxmfOshyhlQR606Apn_VSHI",
+    "plus_code": {
+      "compound_code": "7Q73+VJ Vancouver, British Columbia, Canada",
+      "global_code": "84XR7Q73+VJ"
+    },
+    "rating": 3.9,
+    "reference": "ChIJvxmfOshyhlQR606Apn_VSHI",
+    "scope": "GOOGLE",
+    "types": [
+      "cafe",
+      "restaurant",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "user_ratings_total": 8,
+    "vicinity": "2211 Wesbrook Mall, Vancouver",
+    "html_attributions": []
+  }
+]

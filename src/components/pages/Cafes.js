@@ -1,12 +1,12 @@
+import {CenterWrapper, LoadingSpinner} from '../StyledComponents';
 import Cards from '../Card';
 import React from 'react';
-import scriptLoader from 'react-async-script-loader';
-import {CenterWrapper, LoadingSpinner} from '../StyledComponents';
 import {DecideButton} from '../DecideButton';
 import {getNearbyPlaces} from '../../backend/places';
+import scriptLoader from 'react-async-script-loader';
 import {getCurrentPosition, isValidArray} from '../../backend/utils';
 
-class Restaurants extends React.Component {
+class Cafes extends React.Component {
   constructor(props, context) {
     super(props, context);
 
@@ -34,10 +34,10 @@ class Restaurants extends React.Component {
   }
 
   render() {
-    const { scriptsLoaded, coords } = this.state;
+    const {scriptsLoaded, coords} = this.state;
 
     if (scriptsLoaded && coords) {
-      let results = getNearbyPlaces('restaurant', coords);
+      let results = getNearbyPlaces('cafe', coords);
       return isValidArray(results) &&
         <CenterWrapper margin>
           <DecideButton results={results}/>
@@ -49,4 +49,4 @@ class Restaurants extends React.Component {
   }
 }
 
-export default scriptLoader(['https://maps.googleapis.com/maps/api/js?key=' + process.env.REACT_APP_GOOGLE_PLACES_API_KEY + '&libraries=places'])(Restaurants);
+export default scriptLoader(['https://maps.googleapis.com/maps/api/js?key=' + process.env.REACT_APP_GOOGLE_PLACES_API_KEY + '&libraries=places'])(Cafes);

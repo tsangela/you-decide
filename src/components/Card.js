@@ -1,7 +1,8 @@
-import React, { Component } from "react";
+import React, {Component} from "react";
 import styled from "styled-components";
-import { Modal } from "./Modal";
-import { CenterWrapper } from "./Utils";
+import {Modal} from "./Modal";
+import {CenterWrapper} from "./StyledComponents";
+import {isValidArray} from "../backend/utils";
 
 class Cards extends Component {
   constructor(props, context) {
@@ -10,48 +11,51 @@ class Cards extends Component {
     this.hideModal = this.hideModal.bind(this);
 
     this.state = {
-      show: null
+      prev: null,
+      show: null,
+      place: null
     };
   }
 
-  showModal(id) {
-    this.setState({ show: id });
+  showModal(place) {
+    this.setState({
+      prev: this.state.show,
+      show: place.place_id,
+      place: place
+    });
   }
 
   hideModal() {
-    this.setState({ show: null });
+    this.setState({
+      prev: this.state.show,
+      show: null
+    });
   }
 
   render() {
-    const data = this.props.data;
+    const { results } = this.props;
+
     const cards =
-      data &&
-      data.locations &&
-      data.locations.map(location => {
-        return (
-          <Card
-            key={location.name}
-            onClick={() => this.showModal(location.name)}
-          >
-            <p>{location.name}</p>
-            <p>{location.price}</p>
-          </Card>
-        );
-      });
+      isValidArray(results) &&
+      results.map(place =>
+        <Card
+          key={`card.${place.place_id}`}
+          onClick={() => this.showModal(place)}
+        >
+          <p>{place.name}</p>
+        </Card>
+      );
 
     const modals =
-      data &&
-      data.locations &&
-      data.locations.map(location => {
-        return (
-          <Modal
-            key={`modal.${location.name}`}
-            show={this.state.show === location.name}
-            handleClose={() => this.hideModal()}
-            description={location.description}
-          />
-        );
-      });
+      isValidArray(results) &&
+      results.map(place =>
+        <Modal
+          key={`modal.${place.place_id}`}
+          place={place}
+          show={this.state.show === place.place_id}
+          handleClose={() => this.hideModal()}
+        />
+      );
 
     return (
       <CenterWrapper margin>

@@ -1,26 +1,14 @@
-import React from "react";
-import {Modal} from "../components/Modal";
-
 const data = require("../data/phrases.json");
 
-export function decide(locations) {
-  if (!locations || locations.length === 0) {
+export function decide(results) {
+  if (!results || results.length === 0) {
     alert("🚨 No locations to decide from!");
     return;
   }
 
   const phrase = random(data.phrases);
-  const choice = random(locations);
-  alert(phrase.prefix + choice.name + phrase.suffix + " 🎉");
-
-  return (
-    <Modal
-      key={`modal.choice.${choice.name}`}
-      show={true}
-      handleClose={() => this.hideModal()}
-      description={choice.description}
-    />
-  );
+  const result = random(results);
+  alert(phrase.prefix + result.name + phrase.suffix + " 🎉");
 }
 
 function random(list) {
