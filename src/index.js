@@ -10,8 +10,7 @@ import {theme} from "./components/theme";
 import {CenterWrapper} from "./components/StyledComponents";
 import {NavBar} from "./components/NavBar";
 import Home from "./components/pages/Home";
-import Restaurants from "./components/pages/Restaurants";
-import Cafes from "./components/pages/Cafes";
+import Places from "./components/pages/Places";
 
 class App extends React.Component {
   render() {
@@ -22,8 +21,8 @@ class App extends React.Component {
         </CenterWrapper>
         <NavBar/>
         <Route exact path="/" component={Home}/>
-        <Route path="/restaurants" component={Restaurants}/>
-        <Route path="/cafes" component={Cafes}/>
+        <Route path="/restaurants" render={(props) => <Places {...props} type={'restaurant'}/>}/>
+        <Route path="/cafes" render={(props) => <Places {...props} type={'cafe'}/>}/>
         <Footer/>
       </Router>
     );

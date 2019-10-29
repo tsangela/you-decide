@@ -17,7 +17,7 @@ export class Modal extends React.Component {
           <span>
             <Emoji input={'📍'}/>
             <a href={getMapUrl(place.vicinity)} target='_blank'
-               rel="noopener noreferrer">{distance} m</a>
+               rel="noopener noreferrer">{distance} km</a>
           </span> :
           <i className="fa fa-spinner fa-spin"/>}
         </p>
