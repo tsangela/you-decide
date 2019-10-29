@@ -14,3 +14,8 @@ body {
 a {
     color: #D3C2CE;
 }
+
+a span {
+    color: unset;
+    text-decoration: none;
+}

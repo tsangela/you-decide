@@ -2,9 +2,26 @@ export const isValidArray = array => Array.isArray(array) && array.length > 0;
 
 export const isNonEmptyObject = object => object && Object.keys(object).length > 0;
 
-export const roundToOneDecimal = n => Math.round(n * 10) / 10;
+export const roundToOneDecimal = n => n && Math.round(n * 10) / 10;
 
-export const getMapUrl = address => address ? 'https://www.google.ca/maps/search/' + address.replace(/ /gi, '+') : '#';
+const reducer = (accumulator, curr) => accumulator + '+' + curr.replace(/ /gi, '+');
+
+const getEncodedQuery = (...queries) => queries.reduce(reducer, '');
+
+export const getMapUrl = (name, address) => name && address ? 'https://www.google.ca/maps/search/' + getEncodedQuery(name, address) : '#';
+
+export const getDirectionsUrl = (coords, name, address) => name && address ? 'https://www.google.ca/maps/dir/' + coords.latitude + ',' + coords.longitude  + '/' + getEncodedQuery(name, address) : '#';
+
+export function getSymbols(value, symbol) {
+  if (!value) {
+    return 'N/A';
+  }
+  let symbols = '';
+  for (let i = 1; i <= value; i++) {
+    symbols += symbol;
+  }
+  return symbols;
+}
 
 export function getCurrentPosition(options = {}) {
   return new Promise((resolve, reject) => {

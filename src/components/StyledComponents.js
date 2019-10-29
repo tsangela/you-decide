@@ -23,7 +23,7 @@ export const Button = styled.div`
   width: fit-content;
   
   background: ${props => props.backgroundColor || theme.lavenderGray};
-  color: whitesmoke;
+  color: ${props => props.color || "whitesmoke"};
   
   border-radius: 50px;
   box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.05);

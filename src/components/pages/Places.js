@@ -26,7 +26,7 @@ class Cafes extends React.Component {
    * Uses Google Place Search API {@link https://developers.google.com/places/web-service/search}
    *
    * @param coords The coordinates of the user's current geolocation
-   * @return Array An array of the retrieved places
+   * @return Promise<Array> An array of the retrieved places
    */
   getNearbyPlaces(coords) {
     const {type} = this.props;
@@ -37,7 +37,7 @@ class Cafes extends React.Component {
     let service = new google.maps.places.PlacesService(map);
 
     // Promisify callback
-    let promise = new Promise((resolve, reject) => {
+    return new Promise((resolve, reject) => {
       // Grab coordinate components
       let lat = coords.latitude;
       let lng = coords.longitude;
@@ -58,17 +58,6 @@ class Cafes extends React.Component {
         }
       });
     });
-
-    // Handle promise
-    promise
-      .then(results => {
-        console.log(JSON.stringify(results));
-        this.setState({results});
-      })
-      .catch(err => {
-        console.error(err);
-        this.setState({results: err});
-      });
   }
 
   componentDidUpdate() {
@@ -93,9 +82,17 @@ class Cafes extends React.Component {
         })
     }
 
-    // Load results
+    // Capture results
     if (!results && coords && scriptsLoaded) {
-      this.getNearbyPlaces(coords);
+      this.getNearbyPlaces(coords)
+        .then(res => {
+          console.log(JSON.stringify(res));
+          this.setState({results: res});
+        })
+        .catch(err => {
+          console.error(err);
+          this.setState({results: err});
+        });
     }
   }
 
