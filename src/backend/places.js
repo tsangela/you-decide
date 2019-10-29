@@ -4,7 +4,7 @@ const mockRestaurants = require("../data/test/nearby-restaurants-ubc.json");
 const mockCafes = require("../data/test/nearby-cafes-ubc.json");
 
 /**
- * Retrieves the places of the specified type within 2000km radius of the user
+ * Retrieves the places of the specified type within 500m radius of the user
  * Uses Google Place Search API {@link https://developers.google.com/places/web-service/search}
  *
  * @param type The type of food place to look for, e.g. restaurant, cafe
@@ -15,10 +15,10 @@ const mockCafes = require("../data/test/nearby-cafes-ubc.json");
 export function getNearbyPlaces(type, coords) {
   if (!coords) {
     console.error('Invalid geolocation coordinates', coords);
+    return null;
   }
 
   console.log('in getNearbyPlaces', coords);
-
   const google = window.google;
 
   let lat = coords.latitude;

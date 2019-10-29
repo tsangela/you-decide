@@ -33,7 +33,7 @@ class Cards extends Component {
   }
 
   render() {
-    const { results } = this.props;
+    const { results, coords } = this.props;
 
     const cards =
       isValidArray(results) &&
@@ -54,6 +54,7 @@ class Cards extends Component {
           place={place}
           show={this.state.show === place.place_id}
           handleClose={() => this.hideModal()}
+          coords={coords}
         />
       );
 

@@ -5,33 +5,9 @@ import {Emoji} from "./StyledComponents";
 import {calculateDistance, getMapUrl, isNonEmptyObject, roundToOneDecimal} from "../backend/utils";
 
 export class Modal extends React.Component {
-
-  constructor(props, context) {
-    super(props, context);
-
-    this.state = {
-      distance: null
-    };
-  }
-
-  componentDidUpdate() {
-    const { place } = this.props;
-    const { distance } = this.state;
-    if (!distance) {
-      calculateDistance(place.geometry.location)
-        .then(res => {
-          // todo - Warning: Can't perform a React state update on an unmounted component.
-          this.setState({distance: res});
-        })
-        .catch(err => {
-          console.error(err);
-        });
-    }
-  }
-
   render() {
-    const { place, handleClose, show } = this.props;
-    const { distance } = this.state;
+    const { place, show, handleClose, coords } = this.props;
+    const distance = calculateDistance(place.geometry.location, coords);
 
     return isNonEmptyObject(place)
       ? <Container show={show}>

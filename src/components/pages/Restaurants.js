@@ -41,7 +41,7 @@ class Restaurants extends React.Component {
       return isValidArray(results) &&
         <CenterWrapper margin>
           <DecideButton results={results}/>
-          <Cards results={results}/>
+          <Cards results={results} coords={coords}/>
         </CenterWrapper>
     }
 
