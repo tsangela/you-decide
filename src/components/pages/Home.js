@@ -1,5 +1,5 @@
 import React from "react";
-import {CenterWrapper, Emoji, Spinner} from "../StyledComponents";
+import {CenterWrapper, Emoji} from "../StyledComponents";
 import styled from "styled-components";
 
 import avocados from "../../media/avocados.jpg";

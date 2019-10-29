@@ -7,6 +7,5 @@ export const DecideButton = ({ results }) =>
     key="decide"
     onClick={() => decide(results)}
   >
-    hit me up
-    <Emoji input={'✨'}/>
+    hit me up <Emoji input={'✨'}/>
   </Button>;

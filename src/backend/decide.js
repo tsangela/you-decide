@@ -8,7 +8,8 @@ export function decide(results) {
 
   const phrase = random(data.phrases);
   const result = random(results);
-  alert(phrase.prefix + result.name + phrase.suffix + " 🎉");
+  const emoji = ' ' + random(data.emojis);
+  alert(phrase.prefix + result.name + phrase.suffix + emoji);
 }
 
 function random(list) {

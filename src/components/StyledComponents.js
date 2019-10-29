@@ -16,9 +16,9 @@ export const StyledLink = styled(Link)`
 `;
 
 export const Button = styled.div`
-  font-size: 24px;
-  padding: 5px 15px;
-  margin-top: 15px;
+  font-size: 20px;
+  padding: 0.5rem 1.5rem;
+  margin-top: 0.5rem;
   
   width: fit-content;
   
@@ -58,20 +58,20 @@ const fadeRotate = keyframes`
   }
 `;
 
-export const Spinner = styled.div`
+const Spinner = styled.div`
   font-size: 30px;
   margin: 0.5em;
   animation: ${fadeRotate} 1.5s linear infinite;
 `;
 
+// 🍓 🍋 🥝
 export const LoadingSpinner = () =>
   <CenterWrapper>
-    <Spinner>🍓</Spinner>
-    <Spinner>🍋</Spinner>
-    <Spinner>🥝</Spinner>
+    <Spinner><Emoji input={'🍓'}/></Spinner>
+    <Spinner><Emoji input={'🍓'}/></Spinner>
+    <Spinner><Emoji input={'🍓'}/></Spinner>
   </CenterWrapper>
 ;
-
 
 const expand1 = keyframes`
   0%   { transform: scale(3); }
@@ -97,17 +97,33 @@ const expand3 = keyframes`
   100% { transform: scale(1); }
 `;
 
-const fadeExpand = keyframes`
-  from {
+const expand = keyframes`
+  0% {
     transform: scale(1);
-    opacity 1;
   }
   
-  to {
-    transform: scale(3);
-    opacity 0;
+  50% {
+    transform: scale(1.5);
+  }
+  
+  100% {
+    transform: scale(1);
   }
 `;
+
+const Loader = styled.div`
+  font-size: 30px;
+  margin: 0.5em;
+  animation: ${expand} 0.75s ease-out infinite;
+`;
+
+export const LoadingSpinner2 = () =>
+  <CenterWrapper>
+    <Loader><Emoji input={'✨'}/></Loader>
+    <Loader><Emoji input={'✨'}/></Loader>
+    <Loader><Emoji input={'✨'}/></Loader>
+  </CenterWrapper>
+;
 
 export const LoadingDot = styled.div`
   width: 1em;
@@ -116,4 +132,15 @@ export const LoadingDot = styled.div`
   background-color: ${props => props.color || theme.melon};
   border-radius: 50%;
   animation: ${props => props.expand1 ? expand1 : props.expand2 ? expand2 : expand3} 1s linear infinite;
+`;
+
+export const RoundBorderTitle = styled.h3`
+  padding: 0.5rem 1.5rem;
+  border-radius: 50px;
+  border: 1px solid black;
+`;
+
+export const UnderlineTitle = styled.h3`
+  padding-bottom: 1rem;
+  border-bottom: 1px solid black;
 `;

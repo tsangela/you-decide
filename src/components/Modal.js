@@ -57,12 +57,12 @@ const Price = ({place}) => {
 const Availability = ({place}) => {
   const isOpen = place.opening_hours && place.opening_hours.open_now;
   const status = isOpen ? "Open" : "Closed";
-  const label = <Label isOpen={isOpen}>{status}</Label>;
 
-  return isOpen ?
-    <a href={getMapUrl(place.name, place.vicinity)} target='_blank'
-       rel="noopener noreferrer">{label}</a> :
-    label;
+  return (
+  <a href={getMapUrl(place.name, place.vicinity)} target='_blank'
+     rel="noopener noreferrer">
+    <Label isOpen={isOpen}>{status}</Label>
+  </a>)
 };
 
 const Label = styled.span`
@@ -76,9 +76,9 @@ const Label = styled.span`
   
   transition: 0.2s ease;
   
-  ${props => (props.isOpen &&
-  "&:hover { transform: scale(1.1); }"
-  )}
+  &:hover {
+    transform: scale(1.1); 
+  }
 `;
 
 const zoomFadeIn = keyframes`

@@ -5,7 +5,6 @@ import {DecideButton} from '../DecideButton';
 import scriptLoader from 'react-async-script-loader';
 import {getCurrentPosition, isValidArray} from '../../backend/utils';
 
-// todo - make + replace with empty data
 const mockCafes = require("../../data/test/nearby-cafes-ubc.json");
 const mockRestaurants = require("../../data/test/nearby-restaurants-ubc");
 
@@ -63,7 +62,6 @@ class Cafes extends React.Component {
   componentDidUpdate() {
     const {scriptsLoaded, coords, results} = this.state;
     const {isScriptLoaded, isScriptLoadSucceed} = this.props;
-    console.log(this.state);
 
     // Check if Google Maps script loaded
     const google = window.google;
