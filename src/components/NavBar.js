@@ -16,6 +16,14 @@ export const NavBar = () =>
       <StyledLink to="/cafes">
         <NavButton key="/cafes" title="cafes"><Emoji input={'🍵'}/></NavButton>
       </StyledLink>
+
+      <StyledLink to="/bakeries">
+        <NavButton key="/bakeries" title="bakeries"><Emoji input={'🍞'}/></NavButton>
+      </StyledLink>
+
+      <StyledLink to="/bars">
+        <NavButton key="/bars" title="bars"><Emoji input={'🍻'}/></NavButton>
+      </StyledLink>
     </ButtonWrapper>
   </CenterWrapper>
 ;

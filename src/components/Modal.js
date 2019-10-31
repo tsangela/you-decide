@@ -11,14 +11,33 @@ import {
 } from "../backend/utils";
 
 export class Modal extends React.Component {
+  constructor(props, context) {
+    super(props, context);
+
+    this.state = {
+      distance: null
+    };
+  }
+
+  componentDidUpdate() {
+    const { place, coords } = this.props;
+    const { distance } = this.state;
+
+    if (!distance && place && coords) {
+      const distance = calculateDistance(place.geometry.location, coords);
+      this.setState({distance});
+    }
+  }
+
   render() {
     const { place, show, handleClose, coords } = this.props;
+    const { distance } = this.state;
 
     return isNonEmptyObject(place)
       ? <Container show={show}>
         <h3>{place.name}</h3>
         <p>{place.vicinity}</p>
-        <Distance place={place} coords={coords}/>
+        <Distance distance={distance} place={place} coords={coords}/>
         <Rating place={place}/>
         <Price place={place}/>
         <Availability place={place}/>
@@ -27,9 +46,7 @@ export class Modal extends React.Component {
   }
 }
 
-const Distance = ({place, coords}) => {
-  const distance = calculateDistance(place.geometry.location, coords);
-
+const Distance = ({distance, place, coords}) => {
   return <p>{distance ?
     <span>
       <Emoji input={'📍'}/>

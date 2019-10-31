@@ -23,6 +23,8 @@ class App extends React.Component {
         <Route exact path="/" component={Home}/>
         <Route path="/restaurants" render={(props) => <Places {...props} type={['restaurant', 'food']}/>}/>
         <Route path="/cafes" render={(props) => <Places {...props} type={['cafe']}/>}/>
+        <Route path="/bakeries" render={(props) => <Places {...props} type={['bakery']}/>}/>
+        <Route path="/bars" render={(props) => <Places {...props} type={['bar']}/>}/>
         <Footer/>
       </Router>
     );
