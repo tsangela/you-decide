@@ -21,8 +21,8 @@ class App extends React.Component {
         </CenterWrapper>
         <NavBar/>
         <Route exact path="/" component={Home}/>
-        <Route path="/restaurants" render={(props) => <Places {...props} type={'restaurant'}/>}/>
-        <Route path="/cafes" render={(props) => <Places {...props} type={'cafe'}/>}/>
+        <Route path="/restaurants" render={(props) => <Places {...props} type={['restaurant', 'food']}/>}/>
+        <Route path="/cafes" render={(props) => <Places {...props} type={['cafe']}/>}/>
         <Footer/>
       </Router>
     );

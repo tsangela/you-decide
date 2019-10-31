@@ -1,5 +1,5 @@
 import {CenterWrapper, LoadingSpinner} from '../StyledComponents';
-import Cards from '../Card';
+import Cards from '../Cards';
 import React from 'react';
 import {DecideButton} from '../DecideButton';
 import scriptLoader from 'react-async-script-loader';
@@ -44,7 +44,7 @@ class Cafes extends React.Component {
       let request = {
         location: here,
         radius: '500',
-        type: [type]
+        type: type
       };
 
       // Get places matching type near coords
@@ -52,7 +52,7 @@ class Cafes extends React.Component {
         if (status === google.maps.places.PlacesServiceStatus.OK) {
           resolve(results);
         } else {
-          reject(type === 'cafe' ? mockCafes : mockRestaurants);
+          reject(type.includes('cafe') ? mockCafes : mockRestaurants);
           // reject(new Error(results));
         }
       });

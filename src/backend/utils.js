@@ -4,9 +4,9 @@ export const isNonEmptyObject = object => object && Object.keys(object).length >
 
 export const roundToOneDecimal = n => n && Math.round(n * 10) / 10;
 
-const reducer = (accumulator, curr) => accumulator + '+' + curr.replace(/ /gi, '+');
+const queryReducer = (accumulator, curr) => accumulator + '+' + curr.replace(/ /gi, '+');
 
-const getEncodedQuery = (...queries) => queries.reduce(reducer, '');
+const getEncodedQuery = (...queries) => queries.reduce(queryReducer, '');
 
 export const getMapUrl = (name, address) => name && address ? 'https://www.google.ca/maps/search/' + getEncodedQuery(name, address) : '#';
 
@@ -40,7 +40,7 @@ export function getCurrentPosition(options = {}) {
  *
  * @param location the destination coordinates
  * @param coords the user's current geographic coordinates
- * @return Promise<number> the distance to the given location from the user's current location
+ * @return Promise<number> the distance to the given location from the user's current location in km
  */
 export const calculateDistance = (location, coords) => {
   // Convert coordinates to radians

@@ -67,7 +67,7 @@ class Cards extends Component {
   }
 }
 
-export const Card = styled.div`
+const Card = styled.div`
   text-align: center;
   background: ghostwhite;
   width: 10rem;
