@@ -21,8 +21,8 @@ class Cafes extends React.Component {
   }
 
   /**
-   * Retrieves the places of the specified type within 500m radius of the user
-   * Uses Google Place Search API {@link https://developers.google.com/places/web-service/search}
+   * Retrieves the places of the specified type (e.g. restaurant, cafe) within 500m radius of the user
+   * Uses Google Place Search API {@link https://developers.google.com/maps/documentation/javascript/places}
    *
    * @param coords The coordinates of the user's current geolocation
    * @return Promise<Array> An array of the retrieved places

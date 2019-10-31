@@ -84,8 +84,10 @@ const Availability = ({place}) => {
 
 const Label = styled.span`
   display: inline-block;
-  background: ${props => (props.isOpen ? "mediumseagreen" : "indianred")};
-  color: white;
+  // background: ${props => (props.isOpen ? "mediumseagreen" : "indianred")};
+  // color: white;
+  color: ${props => (props.isOpen ? "mediumseagreen" : "indianred")};
+  border: 1px dashed ${props => (props.isOpen ? "mediumseagreen" : "indianred")};
   
   padding: 0.5rem 1.5rem;
   margin: 1rem;
@@ -94,7 +96,9 @@ const Label = styled.span`
   transition: 0.2s ease;
   
   &:hover {
-    transform: scale(1.1); 
+    // transform: scale(1.1); 
+    background: ${props => (props.isOpen ? "mediumseagreen" : "indianred")};
+    color: white;
   }
 `;
 

@@ -17,7 +17,7 @@ export default class Home extends React.Component {
             find a food place nearby instantly,<br/>
             know <i>exactly</i> where to eat.
           </Description>
-          <Header><Emoji input='🍞'/></Header>
+          <Header><Emoji input='🥨'/></Header>
         </Content>
       </ContentWrapper>
     </CenterWrapper>;
