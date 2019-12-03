@@ -1,14 +1,14 @@
-import {CenterWrapper, LoadingSpinner} from '../StyledComponents';
+import {Button, CenterWrapper, Emoji, EmojiSpinner, PlainSpinner} from '../StyledComponents';
 import Cards from '../Cards';
 import React from 'react';
-import {DecideButton} from '../DecideButton';
 import scriptLoader from 'react-async-script-loader';
 import {getCurrentPosition, isValidArray} from '../../backend/utils';
+import {decide} from "../../backend/decide";
 
 const mockCafes = require("../../data/test/nearby-cafes-ubc.json");
 const mockRestaurants = require("../../data/test/nearby-restaurants-ubc");
 
-class Cafes extends React.Component {
+class Places extends React.Component {
   constructor(props, context) {
     super(props, context);
     this.getNearbyPlaces = this.getNearbyPlaces.bind(this);
@@ -21,7 +21,7 @@ class Cafes extends React.Component {
   }
 
   /**
-   * Retrieves the places of the specified type (e.g. restaurant, cafe) within 500m radius of the user
+   * Retrieves the places of the specified type (e.g. restaurant, cafe) within 1000m radius of the user
    * Uses Google Place Search API {@link https://developers.google.com/maps/documentation/javascript/places}
    *
    * @param coords The coordinates of the user's current geolocation
@@ -43,7 +43,7 @@ class Cafes extends React.Component {
       let here = new google.maps.LatLng(lat, lng);
       let request = {
         location: here,
-        radius: '500',
+        radius: '1000',
         type: type
       };
 
@@ -101,8 +101,17 @@ class Cafes extends React.Component {
       <CenterWrapper margin>
         <DecideButton results={results}/>
         <Cards results={results} coords={coords}/>
-      </CenterWrapper> : <LoadingSpinner/>;
+      </CenterWrapper> : <PlainSpinner/>;
   }
 }
 
-export default scriptLoader(['https://maps.googleapis.com/maps/api/js?key=' + process.env.REACT_APP_GOOGLE_PLACES_API_KEY + '&libraries=places'])(Cafes);
+const DecideButton = ({ results }) =>
+  <Button
+    key="decide"
+    onClick={() => decide(results)}
+  >
+    hit me up <Emoji input={'✨'}/>
+  </Button>
+;
+
+export default scriptLoader(['https://maps.googleapis.com/maps/api/js?key=' + process.env.REACT_APP_GOOGLE_PLACES_API_KEY + '&libraries=places'])(Places);

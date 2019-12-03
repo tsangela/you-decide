@@ -65,13 +65,25 @@ const Spinner = styled.div`
 `;
 
 // 🍓 🍋 🥝
-export const LoadingSpinner = () =>
-  <CenterWrapper>
+export const EmojiSpinner = () => {
+  return <CenterWrapper>
     <Spinner><Emoji input={'🍓'}/></Spinner>
     <Spinner><Emoji input={'🍓'}/></Spinner>
     <Spinner><Emoji input={'🍓'}/></Spinner>
   </CenterWrapper>
-;
+};
+
+const FontSpinner = styled.span`
+  color: ${theme.ashGrey};
+`;
+
+export const PlainSpinner = () => {
+  return <CenterWrapper margin>
+    <FontSpinner>
+      <i className="fa fa-spinner fa-spin fa-3x" />
+    </FontSpinner>
+  </CenterWrapper>
+};
 
 const expand1 = keyframes`
   0%   { transform: scale(3); }

@@ -22,16 +22,18 @@ export class Modal extends React.Component {
   componentDidUpdate() {
     const { place, coords } = this.props;
     const { distance } = this.state;
+    const d = calculateDistance(place.geometry.location, coords);
 
-    if (!distance && place && coords) {
-      const distance = calculateDistance(place.geometry.location, coords);
-      this.setState({distance});
+    if (!distance && d) {
+      this.setState({distance: d});
     }
   }
 
   render() {
     const { place, show, handleClose, coords } = this.props;
     const { distance } = this.state;
+
+    console.log(this.props, this.state);
 
     return isNonEmptyObject(place)
       ? <Container show={show}>

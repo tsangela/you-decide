@@ -1,7 +1,6 @@
 import React from "react";
 import styled from "styled-components";
 import { theme } from "./theme";
-import {CenterWrapper} from "./StyledComponents";
 
 export default class Footer extends React.Component {
   render() {
@@ -13,7 +12,7 @@ export default class Footer extends React.Component {
           rel="noopener noreferrer"
           title="website"
         >
-          <i className="fas fa-user-astronaut fa-3x" />
+          <i className="fas fa-user-astronaut fa-2x" />
         </FooterLink>
         <FooterLink
           href="https://github.com/tsangela/"
@@ -21,7 +20,7 @@ export default class Footer extends React.Component {
           rel="noopener noreferrer"
           title="github"
         >
-          <i className="fab fa-github fa-3x" />
+          <i className="fab fa-github fa-2x" />
         </FooterLink>
         <FooterLink
           href="https://github.com/tsangela/you-decide/"
@@ -29,14 +28,18 @@ export default class Footer extends React.Component {
           rel="noopener noreferrer"
           title="repository"
         >
-          <i className="fas fa-code-branch fa-3x" />
+          <i className="fas fa-code-branch fa-2x" />
         </FooterLink>
         <FooterLink
           href="mailto:?subject=Decide%20where%20to%20eat%20now%21&body=Check%20out%20this%20cool%20way%20to%20decide%20where%20to%20eat%3A%20https%3A//tsangela.github.io/you-decide/"
           title="share"
         >
-          <i className="fas fa-share-alt fa-3x" />
+          <i className="fas fa-share-alt fa-2x" />
         </FooterLink>
+
+        <FooterTab>
+          <i className="far fa-heart fa-2x"/>
+        </FooterTab>
       </FooterWrapper>
     );
   }
@@ -45,17 +48,15 @@ export default class Footer extends React.Component {
 const FooterWrapper = styled.div`
   position: fixed;
   bottom: 10px;
-  left: -170px;
-  padding: 0.5rem 1rem;
+  left: -190px;
+  padding: 0.5rem 0.5rem 0.5rem 0;
   
-  opacity: 0.5;
-  background: ${theme.ashGrey};
+  background: indianred;
   border-radius: 0 50px 50px 0;
 
   transition: 0.5s ease;
   
   &:hover {
-    opacity: 1;
     left: 0;
   }
 `;
@@ -63,4 +64,9 @@ const FooterWrapper = styled.div`
 const FooterLink = styled.a`
   padding: 0.5rem;
   color: white;
+`;
+
+const FooterTab = styled.span`
+  padding: 0.5rem 0.1rem 0.5rem 2rem;
+  color: ${theme.melon};
 `;
