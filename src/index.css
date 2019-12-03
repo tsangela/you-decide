@@ -10,3 +10,12 @@ body {
     position: relative;
     font: 14px "Andale Mono", monospace;
 }
+
+a {
+    color: #D3C2CE;
+}
+
+a span {
+    color: unset;
+    text-decoration: none;
+}
