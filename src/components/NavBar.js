@@ -3,25 +3,25 @@ import React from "react";
 import styled from "styled-components";
 
 export const NavBar = () =>
-  <CenterWrapper>
+  <CenterWrapper margin>
     <ButtonWrapper>
-      <StyledLink to="/">
+      <StyledLink to="/" margin>
         <NavButton key="/" title="home"><Emoji input={'🏠'}/></NavButton>
       </StyledLink>
 
-      <StyledLink to="/restaurants">
+      <StyledLink to="/restaurants" margin>
         <NavButton key="/restaurants" title="restaurants"><Emoji input={'🍚'}/></NavButton>
       </StyledLink>
 
-      <StyledLink to="/cafes">
+      <StyledLink to="/cafes" margin>
         <NavButton key="/cafes" title="cafes"><Emoji input={'🍵'}/></NavButton>
       </StyledLink>
 
-      <StyledLink to="/bakeries">
+      <StyledLink to="/bakeries" margin>
         <NavButton key="/bakeries" title="bakeries"><Emoji input={'🍞'}/></NavButton>
       </StyledLink>
 
-      <StyledLink to="/bars">
+      <StyledLink to="/bars" margin>
         <NavButton key="/bars" title="bars"><Emoji input={'🍻'}/></NavButton>
       </StyledLink>
     </ButtonWrapper>

@@ -1,18 +1,18 @@
 import styled, {keyframes} from "styled-components";
 import {theme} from "./theme";
-import {Link} from "react-router-dom";
+import {NavLink} from "react-router-dom";
 import React from "react";
 
 export const CenterWrapper = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  ${props => props.margin && "margin: 1rem 2rem 0rem 2rem;"}
+  ${props => props.margin && "margin: 1rem 2rem;"}
 `;
 
-export const StyledLink = styled(Link)`
+export const StyledLink = styled(NavLink)`
   text-decoration: none;
-  margin: 0 0.5rem;
+  ${props => props.margin && "margin: 0 0.5rem;"}
 `;
 
 export const Button = styled.div`
