@@ -22,9 +22,13 @@ export class Modal extends React.Component {
   componentDidUpdate() {
     const { place, coords } = this.props;
     const { distance } = this.state;
-    const d = calculateDistance(place.geometry.location, coords);
+    const isGeoLoaded = place.geometry
+      && place.geometry.location
+      && place.geometry.location.lat
+      && place.geometry.location.lng;
 
-    if (!distance && d) {
+    if (!distance && isGeoLoaded) {
+      const d = calculateDistance(place.geometry.location, coords);
       this.setState({distance: d});
     }
   }
