@@ -78,7 +78,7 @@ const Price = ({place}) => {
 };
 
 const Availability = ({place}) => {
-  const isOpen = place.opening_hours && place.opening_hours.open_now;
+  const isOpen = place.opening_hours && place.opening_hours.isOpen();
   const status = isOpen ? "Open" : "Closed";
 
   return (
