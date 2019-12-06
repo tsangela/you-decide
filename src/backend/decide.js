@@ -1,4 +1,4 @@
-const data = require("../data/phrases.json");
+import { phrases, emojis } from '../data/data'
 
 export function decide(results) {
   if (!results || results.length === 0) {
@@ -6,9 +6,9 @@ export function decide(results) {
     return;
   }
 
-  const phrase = random(data.phrases);
+  const phrase = random(phrases);
   const result = random(results);
-  const emoji = ' ' + random(data.emojis);
+  const emoji = ' ' + random(emojis);
   alert(phrase.prefix + result.name + phrase.suffix + emoji);
 }
 

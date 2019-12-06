@@ -1,32 +1,11 @@
 import React from "react";
 import styled from "styled-components";
-import {Redirect} from "react-router";
 import {CenterWrapper, Emoji} from "../StyledComponents";
 
 import avocados from "../../media/avocados.jpg";
 
 export default class Home extends React.Component {
-  constructor(props) {
-    super(props);
-    this.handleChange = this.handleChange.bind(this);
-
-    this.state = {
-      value: null
-    };
-  }
-
-  handleChange(event) {
-    const value = event.target.value;
-    this.setState({value});
-  }
-
   render() {
-    const { value } = this.state;
-
-    if (value) {
-      return <Redirect to={`/${value}`} />
-    }
-
     return <CenterWrapper margin>
       <ContentWrapper>
         <Image src={avocados} alt={"avocados"}/>
@@ -39,45 +18,14 @@ export default class Home extends React.Component {
             know <i>exactly</i> where to eat.
           </Description>
           <Header><Emoji input='🥨'/></Header>
-          <Divider/>
-          <Form>
-            <Select name={"type"} onChange={this.handleChange}>
-              <option value="" defaultValue hidden>i'm looking for a...</option>
-              <option value="restaurants">🍚 restaurant</option>
-              <option value="cafes">🍵 cafe</option>
-              <option value="bakeries">🍞 bakery</option>
-              <option value="bars">🍻 bar</option>
-            </Select>
-            <noscript><input type="submit" value="go!"/></noscript>
-          </Form>
         </Content>
       </ContentWrapper>
     </CenterWrapper>
   }
 }
 
-const Divider = styled.span`
-  width: 100%;
-  margin: 0.5rem 0;
-  border-top: 1px solid lightgray;
-`;
-
-const Form = styled.form`
-  text-align: center;
-  
-  & select {
-    line-height: 1.3;
-  }
-`;
-
-const Select = styled.select`
-  display: block;
-  line-height: 1.3; 
-`;
-
 const Content = styled.div`
   position: absolute;
-  z-index: 1;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
@@ -87,13 +35,13 @@ const Content = styled.div`
   flex-direction: column;
   
   background: rgba(255,255,255,0.8);
-  width: 40%;
+  width: 300px;
   padding: 3rem 1.5rem; 
 
   overflow-y: scroll;
   
   @media only screen and (min-width: 800px) {
-    width: 45%;
+    width: 40%;
   }
 `;
 

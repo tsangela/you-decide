@@ -7,19 +7,23 @@ import {Route} from "react-router";
 import styled from "styled-components";
 import Footer from "./components/Footer";
 import {theme} from "./components/theme";
-import {CenterWrapper} from "./components/StyledComponents";
-import {NavBar} from "./components/NavBar";
+import {CenterWrapper, StyledLink} from "./components/StyledComponents";
 import Home from "./components/pages/Home";
 import Places from "./components/pages/Places";
+import Select from "./components/Select";
+import {NavBar} from "./components/NavBar";
 
 class App extends React.Component {
   render() {
     return (
       <Router>
-        <CenterWrapper>
-          <Title>you decide</Title>
+        <CenterWrapper margin>
+          <StyledLink to="/">
+            <Title>you decide</Title>
+          </StyledLink>
         </CenterWrapper>
         <NavBar/>
+        <Select/>
         <Route exact path="/" component={Home}/>
         <Route path="/restaurants" render={(props) => <Places {...props} type={['restaurant', 'food']}/>}/>
         <Route path="/cafes" render={(props) => <Places {...props} type={['cafe']}/>}/>
@@ -31,12 +35,13 @@ class App extends React.Component {
   }
 }
 
-const Title = styled.h1`
+const Title = styled.div`
   width: fit-content;
   padding: 5px;
   border: 1px solid ${theme.ashGrey};
-  color: ${theme.ashGrey};
   transition: ease 0.3s;
+  
+  color: ${theme.ashGrey};
   font-size: 2.5rem;
 
   &:hover {
