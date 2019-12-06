@@ -1,4 +1,4 @@
-import {Button, CenterWrapper, Emoji, EmojiSpinner, PlainSpinner} from '../StyledComponents';
+import {Button, CenterWrapper, Emoji, PlainSpinner} from '../StyledComponents';
 import Cards from '../Cards';
 import React from 'react';
 import scriptLoader from 'react-async-script-loader';
@@ -76,7 +76,7 @@ class Places extends React.Component {
           this.setState({coords: res.coords});
         })
         .catch(err => {
-          console.error(err);
+          // console.error(err);
         })
     }
 
@@ -84,11 +84,10 @@ class Places extends React.Component {
     if (!results && coords && scriptsLoaded) {
       this.getNearbyPlaces(coords)
         .then(res => {
-          console.log(JSON.stringify(res));
           this.setState({results: res});
         })
         .catch(err => {
-          console.error(err);
+          // console.error(err);
           this.setState({results: err});
         });
     }

@@ -1,4 +1,4 @@
-import styled, {keyframes} from "styled-components";
+import styled from "styled-components";
 import {theme} from "./theme";
 import {NavLink} from "react-router-dom";
 import React from "react";
@@ -37,41 +37,9 @@ export const Button = styled.div`
   }
 `;
 
-export const Emoji = (props) => {
-  return <span role='img' aria-label='icon'>{ props.input }</span>
-};
-
-
-const fadeRotate = keyframes`
-  0% {
-    transform: rotate(0deg);
-    opacity: 1;
-  }
-  
-  50% {
-    opacity: 0.5;
-  }
-
-  100% {
-    transform: rotate(360deg);
-    opacity: 1;
-  }
-`;
-
-const Spinner = styled.div`
-  font-size: 30px;
-  margin: 0.5em;
-  animation: ${fadeRotate} 1.5s linear infinite;
-`;
-
-// 🍓 🍋 🥝
-export const EmojiSpinner = () => {
-  return <CenterWrapper>
-    <Spinner><Emoji input={'🍓'}/></Spinner>
-    <Spinner><Emoji input={'🍓'}/></Spinner>
-    <Spinner><Emoji input={'🍓'}/></Spinner>
-  </CenterWrapper>
-};
+export const Emoji = (props) => (
+  <span role='img' aria-label='icon'>{ props.input }</span>
+);
 
 const FontSpinner = styled.span`
   color: ${theme.ashGrey};
@@ -84,75 +52,3 @@ export const PlainSpinner = () => {
     </FontSpinner>
   </CenterWrapper>
 };
-
-const expand1 = keyframes`
-  0%   { transform: scale(3); }
-  25%  { transform: scale(2); }
-  50%  { transform: scale(1); } 
-  75%  { transform: scale(2); }
-  100% { transform: scale(3); }
-`;
-
-const expand2 = keyframes`
-  0%   { transform: scale(2); }
-  25%  { transform: scale(3); } 
-  50%  { transform: scale(2); }
-  75%  { transform: scale(1); }
-  100% { transform: scale(2); }
-`;
-
-const expand3 = keyframes`
-  0%   { transform: scale(1); }
-  25%  { transform: scale(2); }
-  50%  { transform: scale(3); }
-  75%  { transform: scale(2); }
-  100% { transform: scale(1); }
-`;
-
-const expand = keyframes`
-  0% {
-    transform: scale(1);
-  }
-  
-  50% {
-    transform: scale(1.5);
-  }
-  
-  100% {
-    transform: scale(1);
-  }
-`;
-
-const Loader = styled.div`
-  font-size: 30px;
-  margin: 0.5em;
-  animation: ${expand} 0.75s ease-out infinite;
-`;
-
-export const LoadingSpinner2 = () =>
-  <CenterWrapper>
-    <Loader><Emoji input={'✨'}/></Loader>
-    <Loader><Emoji input={'✨'}/></Loader>
-    <Loader><Emoji input={'✨'}/></Loader>
-  </CenterWrapper>
-;
-
-export const LoadingDot = styled.div`
-  width: 1em;
-  height: 1em;
-  margin: 1.5em;
-  background-color: ${props => props.color || theme.melon};
-  border-radius: 50%;
-  animation: ${props => props.expand1 ? expand1 : props.expand2 ? expand2 : expand3} 1s linear infinite;
-`;
-
-export const RoundBorderTitle = styled.h3`
-  padding: 0.5rem 1.5rem;
-  border-radius: 50px;
-  border: 1px solid black;
-`;
-
-export const UnderlineTitle = styled.h3`
-  padding-bottom: 1rem;
-  border-bottom: 1px solid black;
-`;
