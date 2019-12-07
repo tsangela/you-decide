@@ -52,8 +52,8 @@ class Places extends React.Component {
         if (status === google.maps.places.PlacesServiceStatus.OK) {
           resolve(results);
         } else {
-          reject(type.includes('cafe') ? mockCafes : mockRestaurants);
-          // reject(new Error(results));
+          reject(type.includes('cafe') ? mockCafes : mockRestaurants); // Mock values for now
+          // reject(results); // Renders `No results found!` card
         }
       });
     });
@@ -76,7 +76,7 @@ class Places extends React.Component {
           this.setState({coords: res.coords});
         })
         .catch(err => {
-          // console.error(err);
+          console.error(err);
         })
     }
 
@@ -87,7 +87,7 @@ class Places extends React.Component {
           this.setState({results: res});
         })
         .catch(err => {
-          // console.error(err);
+          console.error(err);
           this.setState({results: err});
         });
     }
@@ -96,21 +96,22 @@ class Places extends React.Component {
   render() {
     const {scriptsLoaded, coords, results} = this.state;
 
-    return scriptsLoaded && coords && isValidArray(results) ?
+    return scriptsLoaded && coords && Array.isArray(results) ?
       <CenterWrapper margin>
-        <DecideButton results={results}/>
+        {results.length > 0 && <DecideButton results={results}/>}
         <Cards results={results} coords={coords}/>
-      </CenterWrapper> : <PlainSpinner/>;
+      </CenterWrapper> :
+      <PlainSpinner/>;
   }
 }
 
-const DecideButton = ({ results }) =>
+const DecideButton = ({ results }) => (
   <Button
     key="decide"
     onClick={() => decide(results)}
   >
     hit me up <Emoji input={'✨'}/>
   </Button>
-;
+);
 
 export default scriptLoader(['https://maps.googleapis.com/maps/api/js?key=' + process.env.REACT_APP_GOOGLE_PLACES_API_KEY + '&libraries=places'])(Places);

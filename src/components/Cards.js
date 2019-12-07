@@ -35,6 +35,16 @@ class Cards extends Component {
   render() {
     const { results, coords } = this.props;
 
+    if (results.length === 0) {
+      return (
+        <CardsWrapper>
+          <Card key={`card.no_results`}>
+            <p>No results found!</p>
+          </Card>
+        </CardsWrapper>
+      );
+    }
+
     const cards =
       isValidArray(results) &&
       results.map(place =>
@@ -59,13 +69,18 @@ class Cards extends Component {
       );
 
     return (
-      <CenterWrapper margin>
+      <CardsWrapper>
         {cards}
         {modals}
-      </CenterWrapper>
+      </CardsWrapper>
     );
   }
 }
+
+const CardsWrapper = styled(CenterWrapper)`
+  margin: 1rem 2rem;
+  width: 400px
+`;
 
 const Card = styled.div`
   text-align: center;

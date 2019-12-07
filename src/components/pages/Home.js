@@ -25,6 +25,9 @@ export default class Home extends React.Component {
 }
 
 const Content = styled.div`
+  background: rgba(255,255,255,0.8);
+  
+  width: 280px;
   position: absolute;
   left: 50%;
   top: 50%;
@@ -33,65 +36,50 @@ const Content = styled.div`
   display: flex;
   align-items: center;
   flex-direction: column;
+  justify-content: center;
   
-  background: rgba(255,255,255,0.8);
-  width: 300px;
-  padding: 3rem 1.5rem; 
-
+  padding: 20px 10px; 
   overflow-y: scroll;
   
-  @media only screen and (min-width: 800px) {
-    width: 40%;
+  @media only screen and (min-width: 600px) {
+    width: 450px;
+    height: 300px;
   }
 `;
 
 const Header = styled.span`
-  font-size: 18px;
+  font-size: 30px;
   font-weight: 900;
   text-align: center;
-
+  
   @media only screen and (min-width: 600px) {
-    font-size: 20px;
-  }
-  
-  @media only screen and (min-width: 1000px) {
-    font-size: 30px;
-  }
-  
-  @media only screen and (min-width: 1440px) {
-    font-size: 36px;
+    font-size: 34px;
   }
 `;
 
 const Description = styled.p`
-  font-size: 10px;
+  font-size: 16px;
   text-align: center;
-
+  
   @media only screen and (min-width: 600px) {
-    font-size: 12px;
-    padding: 0 0.5rem; 
-  }
-  
-  @media only screen and (min-width: 1000px) {
-    font-size: 16px;
-  }
-  
-  @media only screen and (min-width: 1440px) {
     font-size: 20px;
   }
 `;
 
 const Image = styled.img`
-  min-width: 300px;
-  width: 35%;
-  border-radius: 10px;
-
   display: block;
   margin-left: auto;
   margin-right: auto;
+  
+  border-radius: 10px;
+  width: 300px;
+  
+  @media only screen and (min-width: 600px) {
+    width: 470px; 
+  }
 `;
 
 const ContentWrapper = styled.div`
-  display: inline-block;
+  display: flex;
   position: relative;
 `;
