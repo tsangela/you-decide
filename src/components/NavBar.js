@@ -5,23 +5,23 @@ import styled from "styled-components";
 export const NavBar = () =>
   <CenterWrapper margin>
     <ButtonWrapper>
-      <StyledLink to="/" margin>
+      <StyledLink to="/" margin="true">
         <NavButton key="/" title="home"><Emoji input={'🏠'}/></NavButton>
       </StyledLink>
 
-      <StyledLink to="/restaurants" margin>
+      <StyledLink to="/restaurants" margin="true">
         <NavButton key="/restaurants" title="restaurants"><Emoji input={'🍚'}/></NavButton>
       </StyledLink>
 
-      <StyledLink to="/cafes" margin>
+      <StyledLink to="/cafes" margin="true">
         <NavButton key="/cafes" title="cafes"><Emoji input={'🍵'}/></NavButton>
       </StyledLink>
 
-      <StyledLink to="/bakeries" margin>
+      <StyledLink to="/bakeries" margin="true">
         <NavButton key="/bakeries" title="bakeries"><Emoji input={'🍞'}/></NavButton>
       </StyledLink>
 
-      <StyledLink to="/bars" margin>
+      <StyledLink to="/bars" margin="true">
         <NavButton key="/bars" title="bars"><Emoji input={'🍻'}/></NavButton>
       </StyledLink>
     </ButtonWrapper>

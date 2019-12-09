@@ -37,6 +37,19 @@ export const Button = styled.div`
   }
 `;
 
+
+export const Highlight = styled.span`
+  background-image: linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%);
+  background-repeat: no-repeat;
+  background-size: 100% 0.2em;
+  background-position: 2px 100%;
+  transition: background-size 0.25s ease;
+  
+  &:hover {
+    background-size: 100% 100%;
+  }
+`;
+
 export const Emoji = (props) => (
   <span role='img' aria-label='icon'>{ props.input }</span>
 );

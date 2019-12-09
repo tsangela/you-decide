@@ -29,7 +29,9 @@ export class Modal extends React.Component {
 
     if (!distance && isGeoLoaded) {
       const d = calculateDistance(place.geometry.location, coords);
-      this.setState({distance: d});
+      if (d) {
+        this.setState({distance: d});
+      }
     }
   }
 
@@ -78,7 +80,7 @@ const Price = ({place}) => {
 };
 
 const Availability = ({place}) => {
-  const isOpen = place.opening_hours && place.opening_hours.open_now;
+  const isOpen = place.opening_hours && (place.opening_hours.isOpen ? place.opening_hours.isOpen() : place.opening_hours.open_now);
   const status = isOpen ? "Open" : "Closed";
 
   return (
@@ -102,7 +104,6 @@ const Label = styled.span`
   transition: 0.2s ease;
   
   &:hover {
-    // transform: scale(1.1); 
     background: ${props => (props.isOpen ? "mediumseagreen" : "indianred")};
     color: white;
   }
