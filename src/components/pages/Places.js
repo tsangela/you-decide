@@ -2,7 +2,7 @@ import {Button, CenterWrapper, Emoji, PlainSpinner} from '../StyledComponents';
 import Cards from '../Cards';
 import React from 'react';
 import scriptLoader from 'react-async-script-loader';
-import {getCurrentPosition, isValidArray} from '../../backend/utils';
+import {getCurrentPosition} from '../../backend/utils';
 import {decide} from "../../backend/decide";
 
 const mockCafes = require("../../data/test/nearby-cafes-ubc.json");
@@ -84,6 +84,7 @@ class Places extends React.Component {
     if (!results && coords && scriptsLoaded) {
       this.getNearbyPlaces(coords)
         .then(res => {
+          // console.log(JSON.stringify(res));
           this.setState({results: res});
         })
         .catch(err => {
