@@ -2,7 +2,7 @@
   "name": "you-decide",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://tsangela.github.io/you-decide",
+  "homepage": "./",
   "dependencies": {
     "chroma-js": "^2.1.0",
     "react": "^16.8.6",
