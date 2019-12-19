@@ -3,20 +3,29 @@ import styled, {keyframes} from "styled-components";
 import {theme} from "./theme";
 import {Emoji} from "./StyledComponents";
 import {
-  calculateDistance,
-  getDirectionsUrl, getMapUrl,
+  getDirectionsUrl,
+  getMapUrl,
   getSymbols,
   isNonEmptyObject,
   roundToOneDecimal
 } from "../backend/utils";
+import {calculateDistance} from "../backend/calculateDistance";
 
 export class Modal extends React.Component {
   constructor(props, context) {
     super(props, context);
+    this.getDistance = this.getDistance.bind(this);
 
     this.state = {
       distance: null
     };
+  }
+
+  getDistance(options = {}) {
+    return new Promise((resolve, reject) => {
+      const d = calculateDistance(options.location, options.coords);
+      d ? resolve(d) : reject(d);
+    });
   }
 
   componentDidUpdate() {
@@ -28,18 +37,21 @@ export class Modal extends React.Component {
       && place.geometry.location.lng;
 
     if (!distance && isGeoLoaded) {
-      const d = calculateDistance(place.geometry.location, coords);
-      if (d) {
-        this.setState({distance: d});
-      }
+      this.getDistance({location: place.geometry.location, coords: coords})
+        .then(res => {
+          // console.log(res);
+          this.setState({distance: res})
+        })
+        .catch(err => {
+          // do nothing
+          // console.error(err);
+        });
     }
   }
 
   render() {
     const { place, show, handleClose, coords } = this.props;
     const { distance } = this.state;
-
-    console.log(this.props, this.state);
 
     return isNonEmptyObject(place)
       ? <Container show={show}>
@@ -80,7 +92,7 @@ const Price = ({place}) => {
 };
 
 const Availability = ({place}) => {
-  const isOpen = place.opening_hours && (place.opening_hours.isOpen ? place.opening_hours.isOpen() : place.opening_hours.open_now);
+  const isOpen = place.opening_hours && (place.opening_hours.open_now ? place.opening_hours.open_now : place.opening_hours.isOpen());
   const status = isOpen ? "Open" : "Closed";
 
   return (

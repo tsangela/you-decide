@@ -11,13 +11,12 @@ export default class Home extends React.Component {
         <Image src={avocados} alt={"avocados"}/>
         <Content>
           <Header>
-            no more saying "no u" <Emoji input='🙅'/>
+            no more saying "no u" <Emoji input='🙅🏻‍♀️'/>
           </Header>
           <Description>
             find a food place nearby instantly,<br/>
             know <i>exactly</i> where to eat.
           </Description>
-          <Header><Emoji input='🥨'/></Header>
         </Content>
       </ContentWrapper>
     </CenterWrapper>

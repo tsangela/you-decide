@@ -11,7 +11,6 @@ import {CenterWrapper, StyledLink} from "./components/StyledComponents";
 import Home from "./components/pages/Home";
 import Places from "./components/pages/Places";
 import Select from "./components/Select";
-import {NavBar} from "./components/NavBar";
 
 class App extends React.Component {
   render() {
@@ -22,7 +21,6 @@ class App extends React.Component {
             <Title>you decide</Title>
           </StyledLink>
         </CenterWrapper>
-        <NavBar/>
         <Select/>
         <Route exact path="/" component={Home}/>
         <Route path="/restaurants" render={(props) => <Places {...props} type={['restaurant', 'food']}/>}/>

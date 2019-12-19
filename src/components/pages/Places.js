@@ -2,7 +2,6 @@ import {Button, CenterWrapper, Emoji, PlainSpinner} from '../StyledComponents';
 import Cards from '../Cards';
 import React from 'react';
 import scriptLoader from 'react-async-script-loader';
-import {getCurrentPosition} from '../../backend/utils';
 import {decide} from "../../backend/decide";
 
 const mockCafes = require("../../data/test/nearby-cafes-ubc.json");
@@ -11,6 +10,7 @@ const mockRestaurants = require("../../data/test/nearby-restaurants-ubc");
 class Places extends React.Component {
   constructor(props, context) {
     super(props, context);
+    this.getCurrentPosition = this.getCurrentPosition.bind(this);
     this.getNearbyPlaces = this.getNearbyPlaces.bind(this);
 
     this.state = {
@@ -18,6 +18,12 @@ class Places extends React.Component {
       coords: null,
       results: null
     };
+  }
+
+  getCurrentPosition() {
+    return new Promise((resolve, reject) => {
+      navigator.geolocation.getCurrentPosition(resolve, reject);
+    });
   }
 
   /**
@@ -71,7 +77,7 @@ class Places extends React.Component {
 
     // Capture user's coordinates
     if (!coords) {
-      getCurrentPosition()
+      this.getCurrentPosition()
         .then(res => {
           this.setState({coords: res.coords});
         })
