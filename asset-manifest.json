@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "./static/css/main.cb194316.chunk.css",
-    "main.js": "./static/js/main.95cb84f4.chunk.js",
-    "main.js.map": "./static/js/main.95cb84f4.chunk.js.map",
-    "runtime~main.js": "./static/js/runtime~main.d653cc00.js",
-    "runtime~main.js.map": "./static/js/runtime~main.d653cc00.js.map",
-    "static/js/2.189b975f.chunk.js": "./static/js/2.189b975f.chunk.js",
-    "static/js/2.189b975f.chunk.js.map": "./static/js/2.189b975f.chunk.js.map",
-    "index.html": "./index.html",
-    "precache-manifest.8f82e0a78ba1a8eacba65b5f1fef940e.js": "./precache-manifest.8f82e0a78ba1a8eacba65b5f1fef940e.js",
-    "service-worker.js": "./service-worker.js",
-    "static/css/main.cb194316.chunk.css.map": "./static/css/main.cb194316.chunk.css.map",
-    "static/media/avocados.jpg": "./static/media/avocados.9c03fe29.jpg"
+    "main.css": "/you-decide/static/css/main.cb194316.chunk.css",
+    "main.js": "/you-decide/static/js/main.095e9879.chunk.js",
+    "main.js.map": "/you-decide/static/js/main.095e9879.chunk.js.map",
+    "runtime~main.js": "/you-decide/static/js/runtime~main.947e831f.js",
+    "runtime~main.js.map": "/you-decide/static/js/runtime~main.947e831f.js.map",
+    "static/js/2.c064b528.chunk.js": "/you-decide/static/js/2.c064b528.chunk.js",
+    "static/js/2.c064b528.chunk.js.map": "/you-decide/static/js/2.c064b528.chunk.js.map",
+    "index.html": "/you-decide/index.html",
+    "precache-manifest.e727ebd78d29a20824298f4d654ef665.js": "/you-decide/precache-manifest.e727ebd78d29a20824298f4d654ef665.js",
+    "service-worker.js": "/you-decide/service-worker.js",
+    "static/css/main.cb194316.chunk.css.map": "/you-decide/static/css/main.cb194316.chunk.css.map",
+    "static/media/avocados.jpg": "/you-decide/static/media/avocados.9c03fe29.jpg"
   }
 }
