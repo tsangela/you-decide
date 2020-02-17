@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "f536bcf46853d9b62e4a605e2f84b432",
+    "revision": "a4d1e79822c7079d4f3f28f276da8dc9",
     "url": "/you-decide/index.html"
   },
   {
-    "revision": "2511a2ba9d00b1b474f4",
+    "revision": "3d71856e6db06b38de8a",
     "url": "/you-decide/static/css/main.cb194316.chunk.css"
   },
   {
@@ -12,8 +12,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/you-decide/static/js/2.c064b528.chunk.js"
   },
   {
-    "revision": "2511a2ba9d00b1b474f4",
-    "url": "/you-decide/static/js/main.095e9879.chunk.js"
+    "revision": "3d71856e6db06b38de8a",
+    "url": "/you-decide/static/js/main.aedf5bae.chunk.js"
   },
   {
     "revision": "386f27ee55801e339bae",
