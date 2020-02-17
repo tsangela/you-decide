@@ -37,7 +37,7 @@ class App extends React.Component {
   }
 }
 
-const Title = styled.div`
+const Title = styled.div`  
   width: fit-content;
   padding: 5px;
   border: 1px solid ${theme.ashGrey};

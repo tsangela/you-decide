@@ -5,7 +5,6 @@ import React from "react";
 
 export const CenterWrapper = styled.div`
   display: flex;
-  flex-wrap: wrap;
   justify-content: center;
   ${props => props.margin && "margin: 1rem 2rem;"}
 `;

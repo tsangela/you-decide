@@ -3,6 +3,7 @@ import Cards from '../Cards';
 import React from 'react';
 import scriptLoader from 'react-async-script-loader';
 import {decide} from "../../backend/decide";
+import styled from "styled-components";
 
 const mockCafes = require("../../data/test/nearby-cafes-ubc.json");
 const mockRestaurants = require("../../data/test/nearby-restaurants-ubc");
@@ -104,10 +105,12 @@ class Places extends React.Component {
     const {scriptsLoaded, coords, results} = this.state;
 
     return scriptsLoaded && coords && Array.isArray(results) ?
-      <CenterWrapper margin>
+      <PlacesWrapper>
         {results.length > 0 && <DecideButton results={results}/>}
-        <Cards results={results} coords={coords}/>
-      </CenterWrapper> :
+        <CenterWrapper>
+          <Cards results={results} coords={coords}/>
+        </CenterWrapper>
+      </PlacesWrapper> :
       <PlainSpinner/>;
   }
 }
@@ -120,5 +123,12 @@ const DecideButton = ({ results }) => (
     hit me up <Emoji input={'✨'}/>
   </Button>
 );
+
+const PlacesWrapper = styled.div`
+  margin: 1rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
 
 export default scriptLoader(['https://maps.googleapis.com/maps/api/js?key=' + process.env.REACT_APP_GOOGLE_PLACES_API_KEY + '&libraries=places'])(Places);

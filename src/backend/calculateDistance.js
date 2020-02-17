@@ -20,11 +20,14 @@ export function calculateDistance(location, coords) {
   // Convert coordinates to radians
   const {latitude, longitude} = coords;
   const toRad = Math.PI / 180;
-  let latDiff = (location.lat - latitude) * toRad;  // Δφ
-  let lngDiff = (location.lng - longitude) * toRad; // Δλ
+  const destinationLatitude = typeof location.lat === 'function' ? location.lat() : location.lat;
+  const destinationLongitude = typeof location.lng === 'function' ? location.lng() : location.lng;
+
+  let latDiff = (destinationLatitude - latitude) * toRad;  // Δφ
+  let lngDiff = (destinationLongitude - longitude) * toRad; // Δλ
 
   // Apply Haversine formula
-  let a = sin2(latDiff / 2) + (Math.cos(latitude) * Math.cos(location.lat) * sin2(lngDiff / 2));
+  let a = sin2(latDiff / 2) + (Math.cos(latitude) * Math.cos(destinationLatitude) * sin2(lngDiff / 2));
   let c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
   let d = 6371 * c;
 

@@ -78,6 +78,8 @@ class Cards extends Component {
 }
 
 const CardsWrapper = styled(CenterWrapper)`
+  flex-wrap: wrap;
+
   margin: 1rem 2rem;
   width: 400px
 `;
