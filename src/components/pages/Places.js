@@ -37,7 +37,7 @@ class Places extends React.Component {
     const {type} = this.props;
     const google = window.google;
 
-    // Attack to empty node since we're not displaying the map
+    // Attach to empty node since we're not displaying the map
     let map = new google.maps.Map(document.createElement('div'));
     let service = new google.maps.places.PlacesService(map);
 
@@ -50,7 +50,7 @@ class Places extends React.Component {
       let request = {
         location: here,
         radius: '1000',
-        type: type
+        type: [type]
       };
 
       // Get places matching type near coords

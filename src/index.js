@@ -24,10 +24,13 @@ class App extends React.Component {
         <Select/>
         <Route exact path={process.env.PUBLIC_URL + '/'} component={Home}/>
         <Route path={process.env.PUBLIC_URL + '/restaurants'}
-               render={(props) => <Places {...props} type={['restaurant', 'food']}/>}/>
-        <Route path={process.env.PUBLIC_URL + '/cafes'} render={(props) => <Places {...props} type={['cafe']}/>}/>
-        <Route path={process.env.PUBLIC_URL + '/bakeries'} render={(props) => <Places {...props} type={['bakery']}/>}/>
-        <Route path={process.env.PUBLIC_URL + '/bars'} render={(props) => <Places {...props} type={['bar']}/>}/>
+               render={props => <Places {...props} type={'restaurant'}/>}/>
+        <Route path={process.env.PUBLIC_URL + '/cafes'}
+               render={props => <Places {...props} type={'cafe'}/>}/>
+        <Route path={process.env.PUBLIC_URL + '/bakeries'}
+               render={props => <Places {...props} type={'bakery'}/>}/>
+        <Route path={process.env.PUBLIC_URL + '/bars'}
+               render={props => <Places {...props} type={'bar'}/>}/>
         <Footer/>
       </Router>
     );
