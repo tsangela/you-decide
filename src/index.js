@@ -17,16 +17,17 @@ class App extends React.Component {
     return (
       <Router>
         <CenterWrapper margin>
-          <StyledLink to="/">
+          <StyledLink to={process.env.PUBLIC_URL + '/'}>
             <Title>you decide</Title>
           </StyledLink>
         </CenterWrapper>
         <Select/>
-        <Route exact path="/" component={Home}/>
-        <Route path="/restaurants" render={(props) => <Places {...props} type={['restaurant', 'food']}/>}/>
-        <Route path="/cafes" render={(props) => <Places {...props} type={['cafe']}/>}/>
-        <Route path="/bakeries" render={(props) => <Places {...props} type={['bakery']}/>}/>
-        <Route path="/bars" render={(props) => <Places {...props} type={['bar']}/>}/>
+        <Route exact path={process.env.PUBLIC_URL + '/'} component={Home}/>
+        <Route path={process.env.PUBLIC_URL + '/restaurants'}
+               render={(props) => <Places {...props} type={['restaurant', 'food']}/>}/>
+        <Route path={process.env.PUBLIC_URL + '/cafes'} render={(props) => <Places {...props} type={['cafe']}/>}/>
+        <Route path={process.env.PUBLIC_URL + '/bakeries'} render={(props) => <Places {...props} type={['bakery']}/>}/>
+        <Route path={process.env.PUBLIC_URL + '/bars'} render={(props) => <Places {...props} type={['bar']}/>}/>
         <Footer/>
       </Router>
     );

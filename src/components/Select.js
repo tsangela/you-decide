@@ -23,7 +23,7 @@ export default class Selector extends React.Component {
     const { value } = this.state;
 
     return <SelectContainer>
-      {value && <Redirect to={`/${value}`} />}
+      {value && <Redirect to={process.env.PUBLIC_URL + `/${value}`} />}
       <form>
         <Select
           name={"type"}
