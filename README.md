@@ -1,4 +1,4 @@
-<img src="https://github.com/tsangela/tsangela.github.io/blob/master/images/bg/section/donut.jpg" alt="drawing" width="200"/>
+<img src="https://github.com/tsangela/tsangela.github.io-old/blob/master/images/bg/section/donut.jpg" alt="drawing" width="200"/>
 
 # You Decide
 
